@@ -27,9 +27,9 @@
 ```bash
 git init
 git add .
-git commit -m "chore: prepare Focus Research v0.1.0"
+git commit -m "chore: prepare Focus Search v0.1.0"
 git branch -M main
-git remote add origin https://github.com/<你的用户名>/focus-research.git
+git remote add origin https://github.com/<你的用户名>/focus-search.git
 git push -u origin main
 ```
 

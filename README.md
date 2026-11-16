@@ -1,4 +1,4 @@
-# Focus Research
+# Focus Search
 
 一个以主动检索为中心的极简 Chrome 扩展：统一检索入口、专注浏览，并支持自定义快捷入口。
 
@@ -36,7 +36,7 @@
 3. 打开右上角的“开发者模式”。
 4. 点击“加载已解压的扩展程序”。
 5. 选择包含 [`manifest.json`](manifest.json) 的项目目录。
-6. 打开新标签页，检查 Focus Research 首页。
+6. 打开新标签页，检查 Focus Search 首页。
 
 本项目当前没有 `package.json`，也没有构建步骤或后端服务；源码目录就是可加载的扩展目录。修改文件后，在扩展管理页点击该扩展卡片的刷新按钮，再重新打开新标签页。
 
@@ -60,7 +60,7 @@
 
 ## 隐私说明
 
-Focus Research 不包含后端、账号系统、统计代码或广告代码，不读取 Cookie、密码、访问令牌或浏览历史，也不会向项目服务器上传搜索词和快捷入口。搜索请求直接导航到对应平台的官方网页；平台自身的隐私政策和数据处理规则仍然适用。
+Focus Search 不包含后端、账号系统、统计代码或广告代码，不读取 Cookie、密码、访问令牌或浏览历史，也不会向项目服务器上传搜索词和快捷入口。搜索请求直接导航到对应平台的官方网页；平台自身的隐私政策和数据处理规则仍然适用。
 
 ## 已知限制
 
@@ -74,7 +74,18 @@ Focus Research 不包含后端、账号系统、统计代码或广告代码，�
 
 原创代码以 MIT License 发布，见 [`LICENSE`](LICENSE)。平台名称、Logo、favicon 和相关商标归 Google、小红书、Bilibili、知乎及其他相应权利人所有。本项目是独立第三方工具，与这些平台没有官方合作、授权、赞助或隶属关系；第三方品牌素材不因本项目采用 MIT License 而自动获得 MIT 授权。
 
-扩展自身的 Focus Research 图标位于 `assets/brand/` 和 `assets/extension-icon-*.png`。平台小图标位于 `assets/logos/`，使用前请按各平台品牌规范确认适用范围。
+扩展自身的 Focus Search 图标位于 `assets/brand/` 和 `assets/extension-icon-*.png`。平台小图标位于 `assets/logos/`，使用前请按各平台品牌规范确认适用范围。
+
+当前平台 Logo 资源和使用位置如下：
+
+| 平台 | 仓库内资源 | 独立专注首页大 Logo | 当前许可结论 |
+| --- | --- | --- | --- |
+| Google | `assets/logos/google.png`，新标签页小图标 | 不处理 | 应遵循 [Google Identity 品牌规范](https://developers.google.com/identity/branding-guidelines?hl=zh-cn)；未将其视为 MIT 资源 |
+| 小红书 | `assets/logos/xiaohongshu.png`，新标签页小图标和回退图标 | 小红书官方静态资源 URL，见 `focus/xiaohongshu.js` | 公开可访问不等于允许再分发；需人工确认商标和资源使用范围 |
+| Bilibili | `assets/logos/bilibili.png`，新标签页小图标和回退图标 | Bilibili 官方静态资源 URL，见 `focus/bilibili.js` | 未发现随项目再分发的明确许可；需人工确认 |
+| 知乎 | `assets/logos/zhihu.png`，新标签页小图标和回退图标 | 知乎官方静态资源 URL，见 `focus/zhihu.js` | 未发现随项目再分发的明确许可；需人工确认 |
+
+仓库内的小图标用于界面识别，并不表示获得平台授权；独立首页大图标优先运行时加载，失败时使用本地回退图标。若希望最大限度降低品牌风险，可在公开发布前改用不含第三方 Logo 的平台文字标识，或先取得平台书面许可；本次整理不擅自删除或替换现有资源。
 
 ## 贡献与问题反馈
 
@@ -84,7 +95,7 @@ Focus Research 不包含后端、账号系统、统计代码或广告代码，�
 
 ## 发布建议
 
-建议 GitHub 仓库名：`focus-research`
+建议 GitHub 仓库名：`focus-search`
 
 建议 Description：`一个以主动检索为中心的极简 Chrome 扩展，提供统一检索入口、专注浏览和自定义快捷入口。`
 
