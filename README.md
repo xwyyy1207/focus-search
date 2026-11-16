@@ -16,7 +16,15 @@
 
 ## 项目截图
 
-截图目录为 [`assets/screenshots/`](assets/screenshots/)。目前仓库只提供截图占位说明，建议安装并人工验收后再补充实际截图。
+以下截图来自项目维护者提供的真实 Chrome 界面：
+
+![Focus Search 首页](assets/screenshots/homepage.png)
+
+![平台选择菜单](assets/screenshots/platform-selector.png)
+
+![平台专注搜索界面](assets/screenshots/focus-mode.png)
+
+截图目录为 [`assets/screenshots/`](assets/screenshots/)。当前未单独提供快捷入口专用截图；首页截图中已显示快捷入口。提交前仍应检查截图是否包含个人信息。
 
 ## 支持的平台
 
