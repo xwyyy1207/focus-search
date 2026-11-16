@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Search</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/brand/focus-research-favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="search-page">
+      <div class="search-stage">
+        <div class="brand-line" aria-label="(｡•̀ᴗ-)✧ Focus Research">
+          <span class="kaomoji" aria-hidden="true">(｡•̀ᴗ-)✧</span>
+          <span class="product-name">Focus Research</span>
+        </div>
+
+        <form class="search-form" id="search-form" role="search">
+          <button
+            class="platform-trigger"
+            id="platform-trigger"
+            type="button"
+            aria-label="选择搜索平台"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            <img id="platform-logo" class="platform-logo" src="../assets/logos/google.png" alt="Google" />
+            <span class="chevron" aria-hidden="true"></span>
+          </button>
+
+          <input
+            id="query-input"
+            name="q"
+            type="search"
+            placeholder="Search..."
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="搜索关键词"
+          />
+
+          <button class="submit-button" type="submit" aria-label="开始搜索">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.6"></circle>
+              <path d="m16 16 4.4 4.4"></path>
+            </svg>
+          </button>
+
+          <div class="platform-menu" id="platform-menu" role="listbox" aria-label="搜索平台" hidden></div>
+        </form>
+
+        <div class="shortcuts" id="shortcuts" aria-label="自定义快捷入口"></div>
+        <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+      </div>
+    </main>
+
+    <div class="shortcut-dialog" id="shortcut-dialog" hidden>
+      <div class="shortcut-dialog-backdrop" data-dialog-close></div>
+      <form class="shortcut-dialog-panel" id="shortcut-form" role="dialog" aria-modal="true" aria-labelledby="shortcut-dialog-title">
+        <h2 id="shortcut-dialog-title">添加快捷入口</h2>
+        <label>
+          <span>名称</span>
+          <input id="shortcut-name" type="text" maxlength="40" autocomplete="off" required />
+        </label>
+        <label>
+          <span>网址</span>
+          <input id="shortcut-url" type="url" placeholder="https://example.com" autocomplete="off" required />
+        </label>
+        <p class="shortcut-form-error" id="shortcut-form-error" role="alert"></p>
+        <div class="shortcut-dialog-actions">
+          <button type="button" class="dialog-secondary" id="shortcut-cancel">取消</button>
+          <button type="submit" class="dialog-primary">保存</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="shortcut-context-menu" id="shortcut-context-menu" hidden>
+      <button type="button" data-shortcut-action="edit">编辑</button>
+      <button type="button" data-shortcut-action="delete">删除</button>
+    </div>
+
+    <script src="./search-engines.js"></script>
+    <script src="./app.js"></script>
+    <script src="./shortcuts.js"></script>
+  </body>
+</html>

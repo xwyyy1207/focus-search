@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+*.pem
+*.key
+*.crx
+*.zip
+coverage/
+.idea/
+.vscode/
+work/
+outputs/

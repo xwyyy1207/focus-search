@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Focus Research">
+  <rect width="128" height="128" rx="32" fill="#F6F7F2"/>
+  <circle cx="64" cy="64" r="55" fill="none" stroke="#C2C7C0" stroke-width="4"/>
+  <circle cx="43" cy="57" r="6" fill="#2D2F34"/>
+  <path d="M83 51c-5 0-9 4-9 9s4 9 9 9" fill="none" stroke="#2D2F34" stroke-width="5" stroke-linecap="round"/>
+  <path d="M48 78c7 7 18 7 25 0" fill="none" stroke="#2D2F34" stroke-width="4" stroke-linecap="round"/>
+  <path d="m95 28 2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z" fill="#7671D8"/>
+</svg>

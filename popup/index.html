@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Research 设置</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <h1>Focus Research</h1>
+      <label class="toggle-row">
+        <span><span class="label">小红书专注模式</span><span class="hint">首页只保留搜索入口</span></span>
+        <input id="focus-toggle" type="checkbox" />
+        <span class="switch" aria-hidden="true"></span>
+      </label>
+      <label class="toggle-row">
+        <span><span class="label">知乎专注模式</span><span class="hint">首页只保留搜索入口</span></span>
+        <input id="zhihu-focus-toggle" type="checkbox" />
+        <span class="switch" aria-hidden="true"></span>
+      </label>
+      <label class="toggle-row">
+        <span><span class="label">Bilibili 专注模式</span><span class="hint">首页只保留搜索入口</span></span>
+        <input id="bilibili-focus-toggle" type="checkbox" />
+        <span class="switch" aria-hidden="true"></span>
+      </label>
+      <p id="status" class="status" role="status"></p>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,388 @@
+:root {
+  color-scheme: light;
+  --ink: #24252a;
+  --muted: #6f7178;
+  --line: #dadce2;
+  --line-hover: #b9bbc3;
+  --surface: #ffffff;
+  --shadow: 0 4px 16px rgba(45, 46, 54, 0.08);
+  --focus: #7671d8;
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button, input { font: inherit; }
+
+.search-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.search-stage {
+  width: min(100%, 640px);
+  transform: translateY(-5.5vh);
+}
+
+.brand-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 25px;
+  color: #33343b;
+  line-height: 1;
+  text-align: center;
+  user-select: none;
+}
+
+.kaomoji {
+  font-size: clamp(24px, 3vw, 31px);
+  letter-spacing: 0.02em;
+}
+
+.product-name {
+  font-size: clamp(22px, 2.8vw, 29px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 58px;
+  border: 1px solid var(--line);
+  border-radius: 29px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.search-form:focus-within,
+.search-form:hover {
+  border-color: var(--line-hover);
+  box-shadow: 0 6px 22px rgba(45, 46, 54, 0.11);
+}
+
+.platform-trigger {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  padding: 0 6px 0 18px;
+  border: 0;
+  border-radius: 29px 0 0 29px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.platform-trigger:focus-visible,
+.submit-button:focus-visible,
+.platform-option:focus-visible,
+input:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--focus) 35%, transparent);
+  outline-offset: 2px;
+}
+
+.platform-logo { width: 25px; height: 25px; display: block; }
+
+.chevron {
+  width: 7px;
+  height: 7px;
+  margin: -4px 0 0 1px;
+  border-right: 1px solid #a1a3aa;
+  border-bottom: 1px solid #a1a3aa;
+  transform: rotate(45deg);
+  transition: transform 150ms ease, border-color 150ms ease;
+}
+
+.platform-trigger[aria-expanded="true"] .chevron {
+  margin-top: 3px;
+  transform: rotate(225deg);
+  border-color: #777982;
+}
+
+input {
+  min-width: 0;
+  flex: 1;
+  height: 100%;
+  padding: 0 8px 0 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+input::placeholder { color: #9b9da4; }
+input::-webkit-search-cancel-button { cursor: pointer; }
+
+.submit-button {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-right: 2px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #4b4d55;
+  cursor: pointer;
+}
+
+.submit-button:hover { background: #f2f2f5; }
+.submit-button svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+
+.platform-menu {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 10px);
+  left: 8px;
+  min-width: 208px;
+  padding: 6px;
+  border: 1px solid #e3e3e7;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(34, 35, 43, 0.14);
+}
+
+.platform-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.platform-option:hover, .platform-option[aria-selected="true"] { background: #f4f4f7; }
+.platform-option .platform-logo { width: 22px; height: 22px; }
+.platform-name { font-size: 14px; }
+.platform-note { margin-left: auto; color: #92949c; font-size: 11px; }
+
+.status-message {
+  min-height: 18px;
+  margin: 13px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.shortcuts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 640px;
+  margin: 14px auto 0;
+}
+
+.shortcut-chip,
+.shortcut-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 30px;
+  padding: 5px 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #4a4c53;
+  font-size: 13px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shortcut-chip:hover,
+.shortcut-chip:focus-visible,
+.shortcut-add:hover,
+.shortcut-add:focus-visible {
+  background: #f2f2f5;
+  outline: 0;
+}
+
+.shortcut-chip:focus-visible,
+.shortcut-add:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 30%, transparent);
+}
+
+.shortcut-favicon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  display: block;
+  object-fit: contain;
+}
+
+.shortcut-favicon-fallback {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7e8eb;
+  color: #6f7178;
+  font-size: 11px;
+}
+
+.shortcut-add {
+  width: 30px;
+  justify-content: center;
+  padding: 0;
+  color: #777982;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.shortcut-dialog[hidden],
+.shortcut-context-menu[hidden] {
+  display: none;
+}
+
+.shortcut-dialog {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.shortcut-dialog-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(34, 35, 43, 0.18);
+}
+
+.shortcut-dialog-panel {
+  position: relative;
+  width: min(100%, 360px);
+  padding: 22px;
+  border: 1px solid #e2e3e7;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 16px 42px rgba(34, 35, 43, 0.18);
+}
+
+.shortcut-dialog-panel h2 {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.shortcut-dialog-panel label {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.shortcut-dialog-panel label span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.shortcut-dialog-panel input {
+  width: 100%;
+  height: 38px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.shortcut-dialog-panel input:focus {
+  border-color: var(--focus);
+  outline: 3px solid color-mix(in srgb, var(--focus) 20%, transparent);
+}
+
+.shortcut-form-error {
+  min-height: 17px;
+  margin: 9px 0 0;
+  color: #c2364d;
+  font-size: 12px;
+}
+
+.shortcut-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.shortcut-dialog-actions button,
+.shortcut-context-menu button {
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.shortcut-dialog-actions button {
+  padding: 8px 13px;
+  font-size: 13px;
+}
+
+.dialog-secondary { background: #f1f1f4; color: #4a4c53; }
+.dialog-primary { background: #2d2f34; color: #fff; }
+.dialog-secondary:hover { background: #e8e8ec; }
+.dialog-primary:hover { background: #1f2024; }
+
+.shortcut-context-menu {
+  position: fixed;
+  z-index: 11;
+  min-width: 84px;
+  padding: 5px;
+  border: 1px solid #e2e3e7;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(34, 35, 43, 0.15);
+}
+
+.shortcut-context-menu button {
+  display: block;
+  width: 100%;
+  padding: 7px 9px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+  text-align: left;
+}
+
+.shortcut-context-menu button:hover,
+.shortcut-context-menu button:focus-visible {
+  background: #f2f2f5;
+  outline: 0;
+}
+
+@media (max-width: 480px) {
+  .search-page { padding: 16px; }
+  .search-stage { transform: translateY(-8vh); }
+  .search-form { height: 54px; }
+  .submit-button { width: 50px; height: 50px; }
+  input { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-form { transition: none; }
+}

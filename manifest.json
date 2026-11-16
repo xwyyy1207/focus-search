@@ -1,0 +1,69 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Search",
+  "version": "0.1.0",
+  "description": "一个帮助你主动检索、减少信息流干扰的极简搜索新标签页。",
+  "icons": {
+    "16": "assets/extension-icon-16.png",
+    "32": "assets/extension-icon-32.png",
+    "48": "assets/extension-icon-48.png",
+    "128": "assets/extension-icon-128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab/index.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "assets/extension-icon-16.png",
+      "32": "assets/extension-icon-32.png",
+      "48": "assets/extension-icon-48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.xiaohongshu.com/*"
+      ],
+      "js": [
+        "focus/xiaohongshu.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.bilibili.com/*"
+      ],
+      "js": [
+        "focus/bilibili.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.zhihu.com/*"
+      ],
+      "js": [
+        "focus/zhihu.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/logos/xiaohongshu.png",
+        "assets/logos/bilibili.png",
+        "assets/logos/zhihu.png"
+      ],
+      "matches": [
+        "https://www.xiaohongshu.com/*",
+        "https://www.bilibili.com/*",
+        "https://www.zhihu.com/*"
+      ]
+    }
+  ]
+}
